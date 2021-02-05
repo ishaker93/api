@@ -1,0 +1,10 @@
+version: 1
+task_definition:
+  services:
+    api:
+      cpu_shares: 200
+      mem_limit: 200m
+   
+    
+
+

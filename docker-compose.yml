@@ -1,0 +1,7 @@
+version: "3"
+services:
+   api:
+    image: ishaker/api
+    hostname: api
+    ports:
+      - 9000:9000
