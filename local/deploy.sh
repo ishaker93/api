@@ -22,6 +22,7 @@ aws configure set aws_secret_access_key $secretkey
 eval $(aws ecr get-login --no-include-email --region $region | sed 's;https://;;g')
 cd ..
 docker build -t $IMAGE .
+aws ecr describe-repositories --repository-names $image_name || aws ecr create-repository --repository-name $image_name
 docker push $IMAGE 
 clear
 echo -e  "Fill the upcoming params to setup your ECS Cluster:\n"
@@ -47,6 +48,7 @@ aws configure set aws_secret_access_key $secretkey
 eval $(aws ecr get-login --no-include-email --region $region | sed 's;https://;;g')
 cd ..
 docker build -t $IMAGE .
+aws ecr describe-repositories --repository-names $image_name || aws ecr create-repository --repository-name $image_name
 docker push $IMAGE 
 clear
 echo -e  "Fill the upcoming params to setup your ECS Cluster:\n"
