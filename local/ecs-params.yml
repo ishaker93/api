@@ -1,0 +1,10 @@
+version: 1
+task_definition:
+  services:
+    kong:
+      cpu_shares: 200
+      mem_limit: 200m
+   
+    
+
+
